@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4F8D5E9C1B6C0568005E64D4"
-               BuildableName = "dreamhouse.app"
-               BlueprintName = "dreamhouse"
-               ReferencedContainer = "container:dreamhouse.xcodeproj">
+               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+               BuildableName = "SmartSyncExplorerReactNative.app"
+               BlueprintName = "SmartSyncExplorerReactNative"
+               ReferencedContainer = "container:SmartSyncExplorerReactNative.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
+               BuildableName = "SmartSyncExplorerReactNativeTests.xctest"
+               BlueprintName = "SmartSyncExplorerReactNativeTests"
+               ReferencedContainer = "container:SmartSyncExplorerReactNative.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "29154D941DA31DD7005BACC5"
-               BuildableName = "dreamhouseSnapshotTests.xctest"
-               BlueprintName = "dreamhouseSnapshotTests"
-               ReferencedContainer = "container:dreamhouse.xcodeproj">
+               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
+               BuildableName = "SmartSyncExplorerReactNativeTests.xctest"
+               BlueprintName = "SmartSyncExplorerReactNativeTests"
+               ReferencedContainer = "container:SmartSyncExplorerReactNative.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4F8D5E9C1B6C0568005E64D4"
-            BuildableName = "dreamhouse.app"
-            BlueprintName = "dreamhouse"
-            ReferencedContainer = "container:dreamhouse.xcodeproj">
+            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+            BuildableName = "SmartSyncExplorerReactNative.app"
+            BlueprintName = "SmartSyncExplorerReactNative"
+            ReferencedContainer = "container:SmartSyncExplorerReactNative.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,19 +79,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4F8D5E9C1B6C0568005E64D4"
-            BuildableName = "dreamhouse.app"
-            BlueprintName = "dreamhouse"
-            ReferencedContainer = "container:dreamhouse.xcodeproj">
+            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+            BuildableName = "SmartSyncExplorerReactNative.app"
+            BlueprintName = "SmartSyncExplorerReactNative"
+            ReferencedContainer = "container:SmartSyncExplorerReactNative.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "CI_USE_PACKAGER"
-            value = "1"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -91,10 +98,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4F8D5E9C1B6C0568005E64D4"
-            BuildableName = "dreamhouse.app"
-            BlueprintName = "dreamhouse"
-            ReferencedContainer = "container:dreamhouse.xcodeproj">
+            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
+            BuildableName = "SmartSyncExplorerReactNative.app"
+            BlueprintName = "SmartSyncExplorerReactNative"
+            ReferencedContainer = "container:SmartSyncExplorerReactNative.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

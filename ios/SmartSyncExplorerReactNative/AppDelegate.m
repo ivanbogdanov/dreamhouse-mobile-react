@@ -1,5 +1,5 @@
-    /*
- Copyright (c) 2011-2015, salesforce.com, inc. All rights reserved.
+/*
+ Copyright (c) 2011-present, salesforce.com, inc. All rights reserved.
  
  Redistribution and use of this software in source and binary forms, with or without modification,
  are permitted provided that the following conditions are met:
@@ -31,10 +31,7 @@
 #import <SalesforceSDKCore/SFUserAccountManager.h>
 #import <SalesforceSDKCore/SFLogger.h>
 #import <SmartStore/SalesforceSDKManagerWithSmartStore.h>
-
-#import <CoreLocation/CoreLocation.h>
-
-#include "TargetConditionals.h"
+#import <SalesforceSDKCore/SFLoginViewController.h>
 
 // Fill these in when creating a new Connected Application on Force.com
 static NSString * const RemoteAccessConsumerKey = @"3MVG9Iu66FKeHhINkB1l7xt7kR8czFcCTUhgoA8Ol2Ltf1eYHOU4SqQRSEitYFDUpqRWcoQ2.dBv_a1Dyu5xa";
@@ -46,7 +43,7 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
 {
     self = [super init];
     if (self) {
-        [SFLogger setLogLevel:SFLogLevelDebug];
+        [SFLogger sharedLogger].logLevel = SFLogLevelDebug;
 
         // Need to use SalesforceSDKManagerWithSmartStore when using smartstore
         [SalesforceSDKManager setInstanceClass:[SalesforceSDKManagerWithSmartStore class]];
@@ -54,6 +51,9 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
         [SalesforceSDKManager sharedManager].connectedAppId = RemoteAccessConsumerKey;
         [SalesforceSDKManager sharedManager].connectedAppCallbackUri = OAuthRedirectURI;
         [SalesforceSDKManager sharedManager].authScopes = @[ @"web", @"api" ];
+        // Uncomment the following line if you don't want login to happen when the application launches
+        // [SalesforceSDKManager sharedManager].authenticateAtLaunch = NO;
+
         __weak AppDelegate *weakSelf = self;
         [SalesforceSDKManager sharedManager].postLaunchAction = ^(SFSDKLaunchAction launchActionList) {
             //
@@ -84,27 +84,25 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
     self.launchOptions = launchOptions;
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self initializeAppViewState];
     
-    //If you wish to customize the color, textcolor, font and fontsize of the navigation bar uncomment the
-    //code below.
+    //
+    //Uncomment the code below to see how you can customize the color, textcolor, font and fontsize of the navigation bar
     //
     //SFLoginViewController *loginViewController = [SFLoginViewController sharedInstance];
+    //Set showNavBar to NO if you want to hide the top bar
+    //loginViewController.showNavbar = YES;
+    //Set showSettingsIcon to NO if you want to hide the settings icon on the nav bar
+    //loginViewController.showSettingsIcon = YES;
     // Set primary color to different color to style the navigation header
     //loginViewController.navBarColor = [UIColor colorWithRed:0.051 green:0.765 blue:0.733 alpha:1.0];
     //loginViewController.navBarFont = [UIFont fontWithName:@"Helvetica" size:16.0];
     //loginViewController.navBarTextColor = [UIColor blackColor];
     //
+
     [[SalesforceSDKManager sharedManager] launch];
-    
-    // Fix geocoder not loading issue when used from RN
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:@""
-                 completionHandler:^(NSArray* placemarks, NSError* error){
-                 }];
     return YES;
 }
 
@@ -155,18 +153,7 @@ static NSString * const OAuthRedirectURI        = @"testsfdc:///mobilesdk/detect
      * `inet` value under `en0:`) and make sure your computer and iOS device are
      * on the same Wi-Fi network.
      */
-
-#if (TARGET_IPHONE_SIMULATOR)
-//    NSURL *jsCodeLocation = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:%@/index.ios.bundle",@"8081"]];
-
-    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios"];
-#else
-
- NSURL *jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-
-#endif
- 
-    [self setupReactRootView:jsCodeLocation];
+    [self setupReactRootView:[NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios"]];
     
     /**
      * OPTION 2
