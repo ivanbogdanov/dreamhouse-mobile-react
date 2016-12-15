@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0542BBB51E02B5AF00ED0F19 /* libRNGeocoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0542BBB31E02B57B00ED0F19 /* libRNGeocoder.a */; };
 		0579A0E11E02A54D008ADBED /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0579A0E01E02A54D008ADBED /* logo.png */; };
 		0579A0E81E02A5F8008ADBED /* libSalesforceBaseTheme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0579A0E71E02A596008ADBED /* libSalesforceBaseTheme.a */; };
 		0579A0F01E02A662008ADBED /* SalesforceDesignSystemIconsAction.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0579A0E91E02A662008ADBED /* SalesforceDesignSystemIconsAction.ttf */; };
@@ -25,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0542BBB21E02B57B00ED0F19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0542BBAE1E02B57B00ED0F19 /* RNGeocoder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF8FCF941BFFB184000FCD37;
+			remoteInfo = RNGeocoder;
+		};
 		0579A0E61E02A596008ADBED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0579A0E21E02A596008ADBED /* SalesforceBaseTheme.xcodeproj */;
@@ -36,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		0542BBAE1E02B57B00ED0F19 /* RNGeocoder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNGeocoder.xcodeproj; path = "../node_modules/react-native-geocoder/ios/RNGeocoder.xcodeproj"; sourceTree = "<group>"; };
 		0579A0E01E02A54D008ADBED /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		0579A0E21E02A596008ADBED /* SalesforceBaseTheme.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SalesforceBaseTheme.xcodeproj; path = ../node_modules/react.force.base.theme/ios/SalesforceBaseTheme/SalesforceBaseTheme.xcodeproj; sourceTree = "<group>"; };
 		0579A0E91E02A662008ADBED /* SalesforceDesignSystemIconsAction.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SalesforceDesignSystemIconsAction.ttf; path = ../node_modules/react.force.base.theme/Fonts/SalesforceDesignSystemIconsAction.ttf; sourceTree = "<group>"; };
@@ -65,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0542BBB51E02B5AF00ED0F19 /* libRNGeocoder.a in Frameworks */,
 				0579A0E81E02A5F8008ADBED /* libSalesforceBaseTheme.a in Frameworks */,
 				6F00A4EBBB37F8CE9D7F4535 /* libPods-SmartSyncExplorerReactNative.a in Frameworks */,
 			);
@@ -73,9 +83,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0542BBAF1E02B57B00ED0F19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0542BBB31E02B57B00ED0F19 /* libRNGeocoder.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		0579A0DA1E02A48D008ADBED /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				0542BBAE1E02B57B00ED0F19 /* RNGeocoder.xcodeproj */,
 				0579A0E21E02A596008ADBED /* SalesforceBaseTheme.xcodeproj */,
 			);
 			name = Libraries;
@@ -240,6 +259,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 0542BBAF1E02B57B00ED0F19 /* Products */;
+					ProjectRef = 0542BBAE1E02B57B00ED0F19 /* RNGeocoder.xcodeproj */;
+				},
+				{
 					ProductGroup = 0579A0E31E02A596008ADBED /* Products */;
 					ProjectRef = 0579A0E21E02A596008ADBED /* SalesforceBaseTheme.xcodeproj */;
 				},
@@ -252,6 +275,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		0542BBB31E02B57B00ED0F19 /* libRNGeocoder.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNGeocoder.a;
+			remoteRef = 0542BBB21E02B57B00ED0F19 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		0579A0E71E02A596008ADBED /* libSalesforceBaseTheme.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -372,6 +402,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react.force.base.theme/**",
+					"$(SRCROOT)/../node_modules/react-native-geocoder/**",
 				);
 				INFOPLIST_FILE = SmartSyncExplorerReactNative/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -402,6 +433,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react.force.base.theme/**",
+					"$(SRCROOT)/../node_modules/react-native-geocoder/**",
 				);
 				INFOPLIST_FILE = SmartSyncExplorerReactNative/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
