@@ -24,7 +24,7 @@ Watch the recording of the presentation delivered at the TrailheaDX conference:
 
 1. Clone this repository:
     ```
-    git clone https://github.com/ForceDotComLabs/dreamhouse-mobile-react
+    git clone https://github.com/ivanbogdanov/dreamhouse-mobile-react
     ```
 
 1. Navigate to the `dreamhouse-mobile-react` directory:
@@ -39,6 +39,7 @@ Watch the recording of the presentation delivered at the TrailheaDX conference:
 
 1. Install the cocoapods dependencies:
     ```
+    cd ios
     pod install
     ```
 
